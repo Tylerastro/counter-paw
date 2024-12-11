@@ -14,8 +14,11 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
+  category: "website",
+  generator: "Next.js",
   title: "Counter PWA",
   description: "Count with easy counter",
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({

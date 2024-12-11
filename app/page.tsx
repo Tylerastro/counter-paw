@@ -5,7 +5,7 @@ interface ViewProps {
   setIsSimplified: Dispatch<SetStateAction<boolean>>;
 }
 
-export function View(props: ViewProps) {
+function View(props: ViewProps) {
   const { setIsSimplified } = props;
   const [enter, setEnter] = useState(0);
   const [leave, setLeave] = useState(0);
@@ -16,7 +16,7 @@ export function View(props: ViewProps) {
   };
 
   return (
-    <main className="relative h-screen">
+    <>
       <div className="grid grid-cols-2 h-full">
         {/* left column */}
         <button onClick={() => setEnter(enter + 1)}>
@@ -61,11 +61,11 @@ export function View(props: ViewProps) {
           詳細版
         </button>
       </div>
-    </main>
+    </>
   );
 }
 
-export function DetailedView(props: ViewProps) {
+function DetailedView(props: ViewProps) {
   const { setIsSimplified } = props;
   const [enterCityCounters, setEnterCityCounters] = useState({
     台北: 0,
@@ -136,7 +136,7 @@ export function DetailedView(props: ViewProps) {
   };
 
   return (
-    <main className="relative h-screen">
+    <>
       <div className="grid grid-cols-2 h-full">
         {/* left column */}
         <div className="grid grid-cols-1 grid-rows-12 h-full items-center justify-center bg-green-600">
@@ -224,7 +224,7 @@ export function DetailedView(props: ViewProps) {
           簡易版
         </button>
       </div>
-    </main>
+    </>
   );
 }
 
